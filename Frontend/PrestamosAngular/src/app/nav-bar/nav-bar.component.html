@@ -1,0 +1,30 @@
+
+<div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index" style="margin-left: 10px;">
+          <img width="35" height="35" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png" alt="home--v1"/>
+        </a>
+
+        <div id="my-nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" *ngIf="localStorage.getItem('dniUser')!=null">
+              <a class="nav-link" (click)="toThing()">Mis cosas <span class="sr-only"></span></a>
+            </li>       
+            <li class="nav-item active" *ngIf="localStorage.getItem('dniUser')==null">
+              <a class="nav-link" (click)="Login()">Iniciar Sesion<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active" *ngIf="localStorage.getItem('dniUser')==null">
+              <a class="nav-link" (click)="Register()">Registrarse<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" (click)="toCategory()">Ver categorias <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active" *ngIf="localStorage.getItem('dniUser')!=null">
+              <a class="nav-link" (click)="LogOut(localStorage.getItem('dniUser')!)">Cerrar Sesion<span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+  <router-outlet></router-outlet>
+  

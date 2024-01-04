@@ -1,0 +1,40 @@
+<div class="logIn" style="border: 5px solid rgb(229, 193, 121); border-radius: 5%;">
+    <form [formGroup]="formulario" (ngSubmit)="Submit()">
+      <h1>Registrarse</h1>
+      <div class="form-outline mb-4">
+        <label class="form-label" for="password">Nombre</label>
+      <input type="text" formControlName="name" class="form-control" />    
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="password">Apellido</label>
+      <input type="text" formControlName="lastName" class="form-control" />    
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="password">Dni</label>
+      <input type="text" formControlName="dni" class="form-control" />    
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="password">Telefono</label>
+      <input type="text" formControlName="phoneNumber" class="form-control" />    
+    </div>
+      <div class="form-outline mb-4">
+          <label class="form-label" for="email">Email </label>
+        <input type="email" formControlName="email" class="form-control" />   
+      </div>
+      <div formGroupName="emails">
+        <div class="form-outline mb-4">
+            <label class="form-label" for="password">Constraseña</label>
+            <input type="password" formControlName="password1" class="form-control" />    
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="password">Repetir contraseña</label>
+        <input type="password" formControlName="password2" class="form-control" />    
+        </div>
+    </div>
+      <button type="submit" [disabled]="formulario.valid" class="btn btn-primary btn-block mb-4" style="margin-left: 40%;" >Sign in</button>
+      <div style="margin-left: 40%;">
+        <a href="signUp">Registrarse</a>
+      </div>
+    </form>
+  </div>
+  

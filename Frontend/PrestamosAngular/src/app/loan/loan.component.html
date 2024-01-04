@@ -1,0 +1,39 @@
+<h1>Nuevo Prestamo</h1>
+<!-- loan-form.component.html -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="formulario">
+          <div class="mb-3">
+            <label for="thingDescription" class="form-label">Cosa a prestar</label>
+            <input type="text" class="form-control" id="thingDescription" [value]="dataThing?.Description" readonly>
+          </div>
+  
+          <div class="mb-3">
+            <label for="thingCategory" class="form-label">Categoría</label>
+            <input type="text" class="form-control" id="thingCategory" [value]="dataCategory?.Description" readonly>
+          </div>
+  
+          <div class="mb-3">
+            <label for="returnDate" class="form-label">Fecha de devolución</label>
+            <input type="date" class="form-control" id="returnDate" formControlName="returnDate">
+          </div>
+          <div *ngIf="formulario.get('returnDate')?.hasError('required')">
+            La fecha es obligatoria.
+          </div>
+          <div *ngIf="formulario.get('returnDate')?.hasError('invalidDate')!">
+            La fecha no puede ser anterior a la fecha actual.
+          </div>
+  
+          <div class="mb-3">
+            <label for="borrowedTo" class="form-label">Persona a quien se lo presto</label>
+            <input type="text" class="form-control" id="borrowedTo" formControlName="borrowedTo">
+          </div>
+  
+          <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid" (click)="loan()" >Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,19 @@
+<h1>Categorías disponibles</h1>
+<div class="container mt-5">
+<div class="row">
+  <div *ngFor="let category of listCategories" class="col-md-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+            <img class="fas fa-icono-pequeno" *ngIf="category.Description=='Libros'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKNJREFUSEvt1jEKAjEUhOFvQbyCIAiCB9AriXqCBQuPYuE1PIc2dnaCt1AsFAmGt+y6XVLPzJ/MCyGVnlfVc74UMMQWK0xbwC+ocXx7U8AByxbB35YrZjnAHaOOgJf9s/H0BI8/hBdAoxLLDMKaSkWlorCBUBDeojnOYUwDQfqa3jDGAqcG/lCSAvbYhK5YkK1ogB3WmMQ5WUUW0CHzt7X3X8UTf3sZGdsPG6AAAAAASUVORK5CYII="/>
+            <img class="fas fa-icono-pequeno" *ngIf="category.Description=='Indumentaria'" src="https://img.icons8.com/material/24/jumper.png"/>
+            <img class="fas fa-icono-pequeno" *ngIf="category.Description=='Herramientas'" src="https://img.icons8.com/material-rounded/24/wrench.png"/>
+            <img class="fas fa-icono-pequeno"  *ngIf="category.Description=='Electronica'" src="https://img.icons8.com/material-rounded/24/iphone.png"/>
+            <img class="fas fa-icono-pequeno" *ngIf="category.Description=='Objetos Varios'" src="https://img.icons8.com/material-rounded/24/connection-status-off.png" />
+            {{category.Description}}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
